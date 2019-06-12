@@ -1,0 +1,4 @@
+server:
+  port: 8888
+spring:  profiles:    active:    - native
+  cloud:    config:      server:        native:          search-locations:          - file:///D:/Develop/repositoriosGit/gitKraken/spmia-configuration-server/src/main/resources/config/spmia-licensing-service
