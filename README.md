@@ -1,0 +1,1 @@
+spmia-configuration-server
