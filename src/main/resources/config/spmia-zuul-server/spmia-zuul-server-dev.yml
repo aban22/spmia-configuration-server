@@ -1,0 +1,30 @@
+eureka:
+    instance:
+        preferIpAddress: true
+    client:
+        registerWithEureka: true
+        fetchRegistry: true
+        serviceUrl:
+            defaultZone: http://localhost:8761/eureka/
+
+
+#Setting logging levels
+logging:
+    level:
+        com.netflix: WARN
+        org.springframework.web: WARN
+        com.thoughtmechanix: DEBUG
+
+zuul:
+    #ignored-services: 'spmia-organization-service'
+    ignored-services: '*'
+    prefix: /api
+    routes:
+        spmia-organization-service: /organization/**
+        spmia-licensing-service: /licensing/**
+
+management:
+    endpoints:
+        web:
+            exposure:
+                include: '*'
