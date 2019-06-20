@@ -19,6 +19,8 @@ zuul:
     #ignored-services: 'spmia-organization-service'
     ignored-services: '*'
     prefix: /api
+    debug:
+        request: true
     routes:
         spmia-organization-service: /organization/**
         spmia-licensing-service: /licensing/**
@@ -28,3 +30,6 @@ management:
         web:
             exposure:
                 include: '*'
+
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 2500
+#licensingservice.ribbon.ReadTimeout: 7000
